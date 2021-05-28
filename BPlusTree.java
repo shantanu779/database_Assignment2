@@ -22,7 +22,7 @@ public class BPlusTree {
                 return a.compareTo(b);
             }
         };
-        byte [] val = new byte[0];
+        byte [] val = new byte[1];
         return Arrays.binarySearch(dps, 0, numPairs, new DictionaryPair(t, val), c);
     }
 
@@ -658,6 +658,7 @@ public class BPlusTree {
                     int countsBytes_offset = sensorNameBytes_offset+sensorNameBytes.length;
                     System.arraycopy(countsBytes,0,data_val,countsBytes_offset,countsBytes.length);
                     bpt.insert(id, data_val);
+
                 }
             }
         }  catch (FileNotFoundException e) {
@@ -672,7 +673,7 @@ public class BPlusTree {
                 inStream.close();
             }
         }
-                if (bpt.search(15) != null) {
+                if (bpt.search(28876) != null) {
             System.out.println("Found");
         } else {
             System.out.println("Not Found");
